@@ -1,0 +1,901 @@
+/* ===== RESET BÁSICO ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #1A1A1A;
+}
+
+/* ===== MENU ===== */
+.navbar-custom {
+  background: linear-gradient(to bottom, #4B007C, #8600E0);
+}
+
+.navbar-custom .navbar-nav {
+  gap: 32px; 
+}
+
+.navbar-custom .navbar-brand img {
+  height: 80px;
+}
+
+.navbar-custom .nav-link {
+    font-family: "Montserrat", sans-serif;
+    color: #ede9f3;
+    font-weight: 500;
+    margin: 0 12px;
+    transition: 0.3s;
+}
+
+.navbar-custom .nav-link:hover {
+  color: #ffffff;
+}
+
+/* Corrige ícone do menu mobile */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,0.9)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+  background: linear-gradient(to bottom, #4B007C, #1A1A1A);
+  padding-top: 160px;
+  padding-bottom: 20px;
+  color: #e6e1ef;
+}
+
+.hero-section h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.hero-section p {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 22px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #d8d2e2;
+  max-width: 480px;
+}
+
+@keyframes pulseZoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+.btn-hero {
+  position: relative;
+  overflow: hidden;
+
+  margin-top: 30px;
+  padding: 12px 34px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+
+  color: #fff;
+  font-weight: 500;
+
+  animation: pulseZoom 2.6s ease-in-out infinite;
+
+  box-shadow:
+    0px 4px 6px rgba(0, 0, 0, 0.12),
+    0px 2px 4px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  will-change: transform;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* GRADIENTE NORMAL */
+.btn-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #4B007D, #8800E3);
+  opacity: 1;
+  transition: opacity 0.35s ease;
+  z-index: 0;
+}
+
+/* GRADIENTE INVERTIDO */
+.btn-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #8800E3, #4B007D);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 0;
+}
+
+.btn-hero span {
+  position: relative;
+  z-index: 1;
+}
+
+/* HOVER → troca de gradiente */
+.btn-hero:hover::before {
+  opacity: 0;
+}
+
+.btn-hero:hover::after {
+  opacity: 1;
+}
+
+.btn-hero:hover {
+  animation-play-state: paused;
+  transform: translateY(-2px);
+  box-shadow:
+    0px 6px 10px rgba(0, 0, 0, 0.14),
+    0px 3px 6px rgba(0, 0, 0, 0.10);
+}
+
+/* CLICK → sem piscada */
+.btn-hero:active {
+  transform: scale(0.97);
+}
+
+
+
+/* ===== SECTION BASE ===== */
+.about-section {
+  position: relative;
+  padding: 140px 0;
+  background: linear-gradient(to bottom, #1A1A1A, #4B007D);
+  overflow: hidden;
+  color: #e6e1ef;
+}
+
+/* ===== SVG FUNDO (ATRÁS DE TUDO) ===== */
+.about-svg {
+  margin-top: -200px;
+  margin-left: -280px;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.about-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  z-index: 4;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(75, 0, 125, 1),
+    rgba(69, 4, 112, 0.6),
+    rgba(73, 1, 122, 0)
+  );
+}
+
+/* container acima do fade */
+.about-section .container {
+  position: relative;
+  z-index: 3;
+}
+
+/* ===== FOTO ===== */
+.about-photo {
+  width: 100%;
+  max-width: 380px;
+  display: block;
+margin-bottom: -135px
+}
+
+/* ===== TEXTO ===== */
+.about-text h2 {
+  font-family: "Playfair Display", serif;
+  color: #ffffff;
+  font-size: 2.4rem;
+}
+
+.about-text h5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #d8d2e2;
+  margin-bottom: 25px;
+}
+
+.about-text p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #d0cbe0;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.about-text h4 {
+  font-family: "Playfair Display", serif;
+  padding-bottom: 12px;
+  margin-top: 35px;
+  color: #ffffff;
+}
+
+.about-text {
+  margin-bottom: 70px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== SKILLS ===== */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills span {
+  background: linear-gradient(to right, #7f00ff, #b000ff);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.about-svg {
+  opacity: 0.5; 
+}
+
+/* Fundo da Seção */
+.section-projetos {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #4B007D 0%, #1A1A1A 100%);
+}
+
+.projeto-title {
+    font-family: "Playfair Display", serif;
+    color: white;
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+.custom-card {
+  position: relative;
+  padding: 50px;
+  border-radius: 20px;
+
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+
+  background: linear-gradient(
+    180deg,
+    rgba(134, 0, 224, 0.2) 0%,
+    rgba(73, 0, 122, 0.2) 100%
+  );
+
+  z-index: 1;
+}
+
+/* Borda em gradiente */
+.custom-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 6px; /* espessura da borda */
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    #8600E0 0%,
+    #C9A9FF 50%,
+    #49007A 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  z-index: -1;
+}
+
+
+
+/* Imagem do Mockup */
+.mockup-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Texto e Botão */
+.project-description {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.btn-projeto {
+  position: relative;
+  overflow: hidden;
+  display: inline-block; 
+  text-decoration: none; 
+
+  margin-top: 30px;
+  background: linear-gradient(to right, #4B007D, #8800E3);
+  color: #ffffff !important; 
+  padding: 12px 34px;
+  border-radius: 12px;
+  font-weight: 500;
+  border: none;
+
+  box-shadow:
+    0px 4px 6px rgba(0, 0, 0, 0.12),
+    0px 2px 4px rgba(0, 0, 0, 0.08);
+
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+  
+  cursor: pointer;
+}
+
+.btn-projeto::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #8800E3, #4B007D);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+
+.btn-projeto span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-projeto:hover {
+  box-shadow:
+    0px 6px 10px rgba(0, 0, 0, 0.14),
+    0px 3px 6px rgba(0, 0, 0, 0.10);
+
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.btn-projeto:hover::before {
+  opacity: 1;
+}
+
+.carousel-indicators [button] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #8600E0;
+    border: none;
+    margin: 0 5px;
+}
+
+.carousel-indicators {
+  bottom: -60px; /* aumenta o espaço do botão */
+}
+
+.carousel-indicators .active {
+    background-color: #BC66FF;
+}
+
+/* ===== SERVICES SECTION ===== */
+.services-section {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #1A1A1A 0%, #4B007C 100%);
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  color: #f1eaff;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+/* ===== CARD COM BORDA GRADIENTE ===== */
+.service-card {
+  position: relative;
+  height: 100%;
+  padding: 45px 35px;
+  border-radius: 20px;
+  text-align: center;
+
+  border: 6px solid transparent;
+  background-clip: padding-box;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    #8600E0 0%,
+    #C9A9FF 50%,
+    #49007A 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ===== TEXTOS ===== */
+.service-card h3 {
+  font-family: "Montserrat", sans-serif;
+  color: #f1eaff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.service-card p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* ===== BOTÃO ===== */
+.btn-hero {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+
+  background: linear-gradient(to right, #8600E0, #4B007C);
+  box-shadow:
+    0px 6px 10px rgba(0, 0, 0, 0.14),
+    0px 3px 6px rgba(0, 0, 0, 0.10);
+
+  transition: all 0.4s ease;
+}
+
+.btn-hero:hover {
+  background: linear-gradient(to right, #b000ff, #7f00ff);
+  transform: translateY(-2px) scale(1.04);
+  color: #fff;
+}
+
+/* ===== DEPOIMENTOS ===== */
+.testimonials-section {
+  padding: 40px 0;
+  background: linear-gradient(180deg, #4B007C 0%, #1A1A1A 100%);
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  color: #f1eaff;
+  font-weight: 600;
+}
+
+/* ===== CARD ===== */
+.testimonial-card {
+  position: relative;
+  padding: 40px;
+  border-radius: 20px;
+  height: 100%;
+
+  background: linear-gradient(
+    180deg,
+    rgba(134, 0, 224, 0.20) 0%,
+    rgba(73, 0, 122, 0.20) 100%
+  );
+
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    #8600E0 0%,
+    #C9A9FF 50%,
+    #49007A 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ===== TEXTO ===== */
+.testimonial-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+/* ===== USUÁRIO ===== */
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-user img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-user span {
+  color: #f1eaff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ===== DOTS ===== */
+.testimonial-dots {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.testimonial-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.testimonial-dots span.active {
+  background: #8600E0;
+}
+
+/* ===== VALOR DA CRIAÇÃO ===== */
+.pricing-section {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #1A1A1A 0%, #4B007C 100%);
+}
+
+/* TEXTO */
+.pricing-text p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.pricing-text strong {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* IMAGEM */
+.pricing-image {
+  text-align: right;
+}
+
+.pricing-image img {
+  max-width: 100%;
+}
+
+/* ===== BENEFÍCIOS ===== */
+.benefits-section {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #4B007C 0%, #1A1A1A 100%);
+}
+
+.section-title {
+  color: #f1eaff;
+  font-weight: 600;
+}
+
+/* ===== CÍRCULO COM GRADIENTE ===== */
+.benefit-icon {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-icon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px;
+  border-radius: 50%;
+  background: linear-gradient(
+    180deg,
+    #8600E0 0%,
+    #C9A9FF 50%,
+    #49007A 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* SVG dentro */
+.benefit-icon svg {
+  width: 42px;
+  height: 42px;
+  fill: #d9c6ff;
+}
+
+/* ===== TEXTO ===== */
+.benefit-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: linear-gradient(180deg, #1A1A1A 0%, #4B007C 100%);
+  padding: 80px 20px 40px;
+}
+
+.footer-logo {
+  max-width: 180px;
+  margin-bottom: 20px;
+}
+
+.footer-text {
+  color: #d1b3ff;
+  font-size: 16px;
+  max-width: 420px;
+  margin: 0 auto 30px;
+}
+
+.footer-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #8600E0, #C9A9FF);
+  color: #1a002b;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(134, 0, 224, 0.4);
+}
+
+.footer-copy {
+  color: #9b7fcf;
+  font-size: 14px;
+  margin-top: 50px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 100px;
+}
+
+.nav-link {
+  color: #ffffff; 
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #cea3ed !important; 
+  font-weight: 700;
+}
+
+.nav-link.active {
+  color: #b772e8 !important; 
+  font-weight: 700;
+}
+
+
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 991px) {
+  .services-section {
+    text-align: center;
+  }
+
+    .testimonials-section {
+    text-align: center;
+  }
+
+  .testimonial-user {
+    justify-content: center;
+  }
+
+    .pricing-section {
+    text-align: center;
+  }
+
+  .pricing-image {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .pricing-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+    .benefits-section {
+    text-align: center;
+  }
+
+    .custom-card {
+    padding: 35px 25px;
+  }
+
+  .project-description {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+    .btn-projeto {
+    display:  inline-block;
+    margin: 40px auto 0;
+  }
+
+    .btn-wrapper {
+    text-align: center; 
+  }
+
+    .about-section {
+    text-align: center;
+  }
+
+  .about-section .about-text {
+    align-items: center;
+  }
+
+  .about-section .skills {
+    justify-content: center;
+  }
+
+    .about-image-wrapper {
+    justify-content: center;
+  }
+
+    .about-photo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+    .about-svg {
+        margin-left: 0;
+        margin-top: 400px;
+    }
+
+    .about-section {
+    padding: 80px 0;
+  }
+
+  .testimonials-section {
+    padding: 80px 0;
+  }
+
+  .services-section {
+    padding: 80px 0;
+  }
+
+  .pricing-section {
+    padding: 80px 0;
+  }
+
+  .benefits-section {
+    padding: 80px 0;
+  }
+
+  .about-photo {
+    margin-bottom: -75px;
+  }
+
+  .footer {
+    padding: 50px 0;
+  }
+}
+
+
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .hero-section {
+    text-align: center;
+  }
+
+  .hero-section p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-section {
+    text-align: center;
+  }
+
+      .about-svg {
+        margin-left: -100px;
+        margin-top: 400px;
+    }
+
+    .benefits-section .row {
+    row-gap: 40px;
+  }
+
+  .benefits-section .col-lg-4,
+  .benefits-section .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+}
+
+@media (max-width: 576px) {
+    .about-section {
+    padding: 50px 0;
+  }
+
+  .testimonials-section {
+    padding: 50px 0;
+  }
+
+  .services-section {
+    padding: 50px 0;
+  }
+
+  .about-photo {
+    margin-bottom: -45px;
+  }
+
+  .pricing-section {
+    padding: 50px 0;
+  }
+
+  .benefits-section {
+    padding: 50px 0;
+  }
+
+  .footer {
+    padding: 50px 0;
+  }
+ }
+
+
+
+
