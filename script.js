@@ -1,11 +1,10 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav-link");
   const sections = document.querySelectorAll("section");
-  const menu = document.getElementById("menuSite");
+  const menuCollapse = document.getElementById("menuSite");
 
   // Bootstrap collapse (mobile)
-  const bsCollapse = new bootstrap.Collapse(menu, {
+  const bsCollapse = new bootstrap.Collapse(menuCollapse, {
     toggle: false
   });
 
@@ -18,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Ativa link conforme scroll
+  // Ativa link conforme scroll (OFFSET FIXO)
   window.addEventListener("scroll", () => {
-    let scrollPos = window.scrollY + 120;
+    const scrollPos = window.scrollY;
 
     sections.forEach(section => {
       const top = section.offsetTop;
@@ -38,5 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
 
 
