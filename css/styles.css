@@ -1075,6 +1075,16 @@ margin-bottom: -135px
     max-width: 50%;
   }
 
+    .custom-card {
+    max-width: 100%;
+  }
+
+    .container {
+    max-width: 100% !important;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
 }
 
 @media (max-width: 576px) {
