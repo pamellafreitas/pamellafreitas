@@ -1,0 +1,8 @@
+# Robots.txt — Pamella Freitas Web Designer
+# www.pamellafreitas.com.br
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.pamellafreitas.com.br/sitemap.xml
