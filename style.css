@@ -1243,6 +1243,7 @@ body {
     position: relative;
     z-index: 1;
     background: white;
+    white-space: nowrap;
 }
 
 .service-card:hover .service-btn {
@@ -2826,6 +2827,7 @@ body {
     margin-bottom: 2.5rem;
     text-decoration: none;
     font-size: 1rem;
+    white-space: nowrap;
 }
 
 .cta-whatsapp-btn:hover {
