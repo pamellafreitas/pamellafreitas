@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Design System V3 - Lilac Edition</title>
+    <script src="assets/resource_3fa48481346f.es"></script>
+    <script src="assets/iconify-icon_e19829e7f0e8.js"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="assets/css2_975b7ae911f5.css" rel="stylesheet"/>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #EDE2FF; }
+        ::-webkit-scrollbar-thumb { background: #D7B8FF; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #A459D1; }
+
+        /* Design System Layout Additions */
+        body { padding-top: 80px; }
+        .ds-section { padding: 100px 0; border-bottom: 1px solid rgba(215, 184, 255, 0.4); }
+        .ds-section-title { 
+            font-family: 'Barlow Condensed', sans-serif; 
+            font-weight: bold; 
+            font-size: 3.5rem; 
+            color: #4B007D; 
+            text-transform: uppercase; 
+            margin-bottom: 3rem; 
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .ds-section-title::before {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #A459D1;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(164,89,209,0.8);
+        }
+        .ds-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #4A4A4A;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-['DM_Sans'] bg-[#EDE2FF] text-[#4A4A4A] antialiased relative min-h-screen selection:bg-[#A459D1] selection:text-white">
+
+    <!-- Ambient Background Glows -->
+    <div class="fixed top-[-20%] left-[-10%] w-[60%] h-[60%] bg-[#A459D1] rounded-full mix-blend-multiply filter blur-[250px] opacity-[0.1] pointer-events-none z-0"></div>
+    <div class="fixed bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-[#D7B8FF] rounded-full mix-blend-multiply filter blur-[250px] opacity-[0.2] pointer-events-none z-0"></div>
+
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-[#EDE2FF]/85 backdrop-blur-xl border-b border-[#D7B8FF]/60 shadow-[0_5px_20px_rgba(75,0,125,0.04)]">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a class="flex items-center gap-2 relative z-10 group" href="#">
+                <iconify-icon class="text-[#A459D1] text-3xl group-hover:rotate-90 transition-transform duration-500 drop-shadow-[0_0_8px_rgba(164,89,209,0.4)]" icon="solar:programming-linear"></iconify-icon>
+                <span class="font-['Bebas_Neue'] text-2xl tracking-wide text-[#4B007D] mt-1">SYS<span class="text-[#A459D1]">V3</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-[#4A4A4A] font-medium text-sm hover:text-[#A459D1] transition-colors" href="#hero">Hero</a>
+                <a class="text-[#4A4A4A] font-medium text-sm hover:text-[#A459D1] transition-colors" href="#typography">Typography</a>
+                <a class="text-[#4A4A4A] font-medium text-sm hover:text-[#A459D1] transition-colors" href="#colors">Colors</a>
+                <a class="text-[#4A4A4A] font-medium text-sm hover:text-[#A459D1] transition-colors" href="#components">Components</a>
+                <a class="text-[#4A4A4A] font-medium text-sm hover:text-[#A459D1] transition-colors" href="#layout">Layout</a>
+                <a class="text-[#4A4A4A] font-medium text-sm hover:text-[#A459D1] transition-colors" href="#motion">Motion</a>
+            </div>
+            <a class="hidden lg:flex bg-[#4B007D] hover:bg-[#A459D1] text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors shadow-md" href="#">
+                Download Assets
+            </a>
+        </div>
+    </nav>
+
+    <!-- 0) Hero -->
+    <div id="hero">
+        <section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#EDE2FF]">
+            <div class="absolute inset-0 z-0 flex justify-center items-center">
+                <div class="absolute inset-0 bg-gradient-to-br from-[#EDE2FF]/95 via-[#EDE2FF]/80 to-[#D7B8FF]/40 z-10"></div>
+                <img alt="Background Pattern" class="w-full h-full object-cover object-center mix-blend-multiply opacity-20 filter grayscale blur-[2px]" src="assets/photo-1534438327276-14e5300c3a_b1d8cec33033.jpg"/>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-6 w-full relative z-20 flex flex-col lg:flex-row justify-between items-center mt-12">
+                <div class="max-w-2xl w-full pt-10">
+                    <span class="inline-block bg-[#D7B8FF]/40 border border-[#A459D1]/30 text-[#4B007D] font-bold px-5 py-2 rounded-full text-xs tracking-widest uppercase mb-8 shadow-[0_5px_15px_rgba(164,89,209,0.1)] flex items-center gap-2 w-max">
+                        <div class="w-2.5 h-2.5 bg-[#A459D1] rounded-full animate-pulse"></div>
+                        Lilac Core Edition
+                    </span>
+                    <h1 class="font-['Bebas_Neue'] text-8xl md:text-9xl leading-[0.85] text-[#4B007D] tracking-tight mb-6">
+                        BUILD WITH<br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#4B007D] via-[#A459D1] to-[#D7B8FF]">CONFIDENCE</span><br/>
+                        AND STYLE
+                    </h1>
+                    <p class="text-lg text-[#4A4A4A] max-w-lg mb-10 leading-relaxed font-medium">
+                        Welcome to the new light-themed robust design system. We replaced the aggressive dark motif with an elegant, energetic, and clean purple palette ideal for premium web experiences. Now with a beautiful lilac background.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a class="bg-gradient-to-r from-[#4B007D] to-[#A459D1] text-white text-lg font-bold px-8 py-4 rounded-full transition-all duration-300 inline-flex items-center justify-center shadow-[0_8px_20px_rgba(75,0,125,0.25)] hover:shadow-[0_12px_30px_rgba(164,89,209,0.4)] hover:-translate-y-1" href="#typography">
+                            Explore Specs
+                        </a>
+                        <a class="bg-white/80 backdrop-blur-md border border-[#D7B8FF] hover:border-[#A459D1] text-[#4B007D] text-lg font-bold px-8 py-4 rounded-full transition-all duration-300 inline-flex items-center gap-3 justify-center group shadow-sm hover:shadow-[0_8px_20px_rgba(164,89,209,0.15)] hover:-translate-y-1" href="#components">
+                            View Components <iconify-icon class="text-xl group-hover:translate-y-1 group-hover:text-[#A459D1] transition-all" icon="solar:arrow-down-linear"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hidden lg:block w-[400px] bg-white/70 backdrop-blur-2xl p-8 rounded-3xl border border-[#D7B8FF] shadow-[0_20px_50px_rgba(75,0,125,0.08),inset_0_0_20px_rgba(255,255,255,0.5)] relative group hover:-translate-y-4 transition-transform duration-700">
+                    <div class="flex items-center justify-between mb-6 pb-6 border-b border-[#D7B8FF]/50 group-hover:border-[#D7B8FF] transition-colors">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#A459D1] to-[#4B007D] shadow-[0_0_15px_rgba(164,89,209,0.4)] border-2 border-white flex items-center justify-center">
+                                <iconify-icon class="text-white text-2xl" icon="solar:palette-bold-duotone"></iconify-icon>
+                            </div>
+                            <div>
+                                <div class="font-['Bebas_Neue'] text-3xl tracking-tight text-[#4B007D] leading-none">Color Tokens</div>
+                                <div class="text-[#A459D1] text-xs font-bold uppercase tracking-widest mt-1">Lilac Light Active</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6 bg-[#F8F6FC] rounded-2xl p-5 border border-[#D7B8FF]/40 shadow-inner relative overflow-hidden group/card cursor-default">
+                        <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#A459D1]"></div>
+                        <div class="flex justify-between items-start mb-3 pl-2">
+                            <div class="text-[#4B007D] font-bold text-sm">Theme Colors</div>
+                            <iconify-icon class="text-[#A459D1] text-xl" icon="solar:magic-stick-3-linear"></iconify-icon>
+                        </div>
+                        <div class="flex gap-3 pl-2 mt-2">
+                            <div class="w-8 h-8 rounded-full bg-[#4B007D] shadow-md border-2 border-white hover:scale-110 transition-transform cursor-pointer" title="#4B007D"></div>
+                            <div class="w-8 h-8 rounded-full bg-[#A459D1] shadow-md border-2 border-white hover:scale-110 transition-transform cursor-pointer" title="#A459D1"></div>
+                            <div class="w-8 h-8 rounded-full bg-[#D7B8FF] shadow-md border-2 border-white hover:scale-110 transition-transform cursor-pointer" title="#D7B8FF"></div>
+                            <div class="w-8 h-8 rounded-full bg-[#EDE2FF] shadow-sm border border-[#A459D1]/20 hover:scale-110 transition-transform cursor-pointer" title="#EDE2FF"></div>
+                            <div class="w-8 h-8 rounded-full bg-[#F8F6FC] shadow-sm border border-[#A459D1]/20 hover:scale-110 transition-transform cursor-pointer" title="#F8F6FC"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- MAIN WRAPPER FOR SECTIONS -->
+    <div class="max-w-7xl mx-auto px-6 relative z-10 space-y-16 pb-32">
+
+        <!-- 1) Typography Section -->
+        <section id="typography" class="ds-section">
+            <h2 class="ds-section-title">1. Typography</h2>
+            <div class="bg-white rounded-3xl border border-[#D7B8FF]/50 shadow-[0_10px_40px_rgba(75,0,125,0.05)] overflow-hidden">
+                
+                <!-- Table Header -->
+                <div class="grid grid-cols-12 gap-4 px-8 py-5 border-b border-[#D7B8FF]/40 bg-[#F8F6FC]">
+                    <div class="col-span-3 text-[#A459D1] text-xs font-bold uppercase tracking-widest">Style Name</div>
+                    <div class="col-span-6 text-[#A459D1] text-xs font-bold uppercase tracking-widest">Preview</div>
+                    <div class="col-span-3 text-right text-[#A459D1] text-xs font-bold uppercase tracking-widest">Size / L-Height</div>
+                </div>
+
+                <!-- Heading 1 -->
+                <div class="grid grid-cols-12 gap-8 px-8 py-10 border-b border-[#D7B8FF]/30 items-center group hover:bg-[#F8F6FC] transition-colors">
+                    <div class="col-span-3">
+                        <div class="text-[#4B007D] font-bold text-lg">Heading 1</div>
+                        <div class="text-xs text-[#4A4A4A] mt-1 font-mono bg-[#EDE2FF] inline-block px-2 py-1 rounded border border-[#D7B8FF]/50">Bebas_Neue / 8xl</div>
+                    </div>
+                    <div class="col-span-6">
+                        <h1 class="font-['Bebas_Neue'] text-8xl md:text-9xl leading-[0.85] text-[#4B007D] tracking-tight">ELEGANT SHIFT</h1>
+                    </div>
+                    <div class="col-span-3 text-right text-[#4A4A4A] font-mono text-sm">96px - 128px / 0.85</div>
+                </div>
+
+                <!-- Heading 2 -->
+                <div class="grid grid-cols-12 gap-8 px-8 py-10 border-b border-[#D7B8FF]/30 items-center group hover:bg-[#F8F6FC] transition-colors">
+                    <div class="col-span-3">
+                        <div class="text-[#4B007D] font-bold text-lg">Heading 2</div>
+                        <div class="text-xs text-[#4A4A4A] mt-1 font-mono bg-[#EDE2FF] inline-block px-2 py-1 rounded border border-[#D7B8FF]/50">Barlow_Con / 6xl</div>
+                    </div>
+                    <div class="col-span-6">
+                        <h2 class="font-['Barlow_Condensed'] font-bold text-6xl md:text-7xl text-[#4B007D] tracking-tight leading-[1]">EMPOWER YOUR DESIGN</h2>
+                    </div>
+                    <div class="col-span-3 text-right text-[#4A4A4A] font-mono text-sm">60px - 72px / 1.0</div>
+                </div>
+
+                <!-- Heading 3 -->
+                <div class="grid grid-cols-12 gap-8 px-8 py-8 border-b border-[#D7B8FF]/30 items-center group hover:bg-[#F8F6FC] transition-colors">
+                    <div class="col-span-3">
+                        <div class="text-[#4B007D] font-bold text-lg">Heading 3 / Sub</div>
+                        <div class="text-xs text-[#4A4A4A] mt-1 font-mono bg-[#EDE2FF] inline-block px-2 py-1 rounded border border-[#D7B8FF]/50">Barlow_Con / 4xl</div>
+                    </div>
+                    <div class="col-span-6">
+                        <h3 class="font-['Barlow_Condensed'] font-medium text-4xl text-[#4B007D] tracking-tight">Creative Potential</h3>
+                    </div>
+                    <div class="col-span-3 text-right text-[#4A4A4A] font-mono text-sm">36px / 1.1</div>
+                </div>
+
+                <!-- Regular Large -->
+                <div class="grid grid-cols-12 gap-8 px-8 py-8 items-center group hover:bg-[#F8F6FC] transition-colors">
+                    <div class="col-span-3">
+                        <div class="text-[#4B007D] font-bold text-lg">Body Text L</div>
+                        <div class="text-xs text-[#4A4A4A] mt-1 font-mono bg-[#EDE2FF] inline-block px-2 py-1 rounded border border-[#D7B8FF]/50">Text-lg / Font-med</div>
+                    </div>
+                    <div class="col-span-6">
+                        <p class="text-lg text-[#4A4A4A] font-medium leading-relaxed">The new color palette provides a softer, yet highly energetic foundation. This is perfect for modern platforms targeting clarity and joy.</p>
+                    </div>
+                    <div class="col-span-3 text-right text-[#4A4A4A] font-mono text-sm">18px / 1.625</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2) Colors & Surfaces -->
+        <section id="colors" class="ds-section">
+            <h2 class="ds-section-title">2. Colors & Surfaces</h2>
+            
+            <div class="mb-14">
+                <span class="ds-label">Brand Palette</span>
+                <div class="grid grid-cols-2 md:grid-cols-6 gap-6">
+                    <!-- Color Blocks -->
+                    <div class="rounded-2xl overflow-hidden border border-[#D7B8FF]/50 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="h-28 bg-[#4B007D]"></div>
+                        <div class="p-3 bg-white text-center">
+                            <span class="block text-[#4B007D] font-bold text-xs">#4B007D</span>
+                            <span class="block text-[#A459D1] text-[10px] uppercase mt-1">Deep Primary</span>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border border-[#D7B8FF] shadow-[0_0_15px_rgba(164,89,209,0.15)] scale-105 z-10 bg-white">
+                        <div class="h-28 bg-[#A459D1]"></div>
+                        <div class="p-3 bg-white text-center">
+                            <span class="block text-[#A459D1] font-bold text-xs">#A459D1</span>
+                            <span class="block text-[#A459D1] text-[10px] uppercase mt-1">Vivid Accent</span>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border border-[#D7B8FF]/50 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="h-28 bg-[#D7B8FF]"></div>
+                        <div class="p-3 bg-white text-center">
+                            <span class="block text-[#4B007D] font-bold text-xs">#D7B8FF</span>
+                            <span class="block text-[#A459D1] text-[10px] uppercase mt-1">Soft Violet</span>
+                        </div>
+                    </div>
+                     <div class="rounded-2xl overflow-hidden border border-[#D7B8FF]/50 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="h-28 bg-[#EDE2FF]"></div>
+                        <div class="p-3 bg-white text-center">
+                            <span class="block text-[#4A4A4A] font-bold text-xs">#EDE2FF</span>
+                            <span class="block text-[#A459D1] text-[10px] uppercase mt-1">Surface L1</span>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border border-[#D7B8FF]/50 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="h-28 bg-[#F8F6FC]"></div>
+                        <div class="p-3 bg-white text-center">
+                            <span class="block text-[#4A4A4A] font-bold text-xs">#F8F6FC</span>
+                            <span class="block text-[#A459D1] text-[10px] uppercase mt-1">Background</span>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border border-[#D7B8FF]/50 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="h-28 bg-[#4A4A4A]"></div>
+                        <div class="p-3 bg-white text-center">
+                            <span class="block text-[#4A4A4A] font-bold text-xs">#4A4A4A</span>
+                            <span class="block text-[#A459D1] text-[10px] uppercase mt-1">Body Text</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <span class="ds-label">Elevations / Background Variations</span>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="rounded-2xl border border-[#D7B8FF] bg-white shadow-sm p-6 flex flex-col items-center hover:shadow-md transition-all">
+                        <div class="w-16 h-16 rounded-full bg-white border border-[#D7B8FF] shadow-md mb-4 flex items-center justify-center">
+                            <iconify-icon class="text-[#A459D1] text-2xl" icon="solar:layers-minimalistic-linear"></iconify-icon>
+                        </div>
+                        <div class="text-[#4B007D] font-bold">Standard Card</div>
+                        <div class="text-[#4A4A4A] text-xs mt-1 text-center">bg-white border-[#D7B8FF]<br/>shadow-sm</div>
+                    </div>
+                    <div class="rounded-2xl border border-transparent bg-gradient-to-br from-[#EDE2FF] to-white shadow-md p-6 flex flex-col items-center hover:shadow-lg transition-all">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#D7B8FF] to-white shadow-[0_5px_15px_rgba(164,89,209,0.2)] mb-4 flex items-center justify-center">
+                             <iconify-icon class="text-[#4B007D] text-2xl" icon="solar:magic-stick-3-linear"></iconify-icon>
+                        </div>
+                        <div class="text-[#4B007D] font-bold">Gradient Surface</div>
+                        <div class="text-[#4A4A4A] text-xs mt-1 text-center">bg-gradient-to-br from-[#EDE2FF]</div>
+                    </div>
+                    <div class="rounded-2xl border border-[#D7B8FF] bg-[#F8F6FC]/60 backdrop-blur-xl p-6 flex flex-col items-center shadow-[0_10px_30px_rgba(75,0,125,0.05)] hover:shadow-[0_15px_40px_rgba(75,0,125,0.1)] transition-all">
+                        <div class="w-16 h-16 rounded-full bg-white/80 backdrop-blur-md border border-[#D7B8FF] mb-4 flex items-center justify-center">
+                            <iconify-icon class="text-[#A459D1] text-2xl" icon="solar:waterdrops-linear"></iconify-icon>
+                        </div>
+                        <div class="text-[#4B007D] font-bold">Glassmorphism UI</div>
+                        <div class="text-[#4A4A4A] text-xs mt-1 text-center">bg-[#F8F6FC]/60 backdrop-blur</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3) UI Components -->
+        <section id="components" class="ds-section">
+            <h2 class="ds-section-title">3. Components</h2>
+            
+            <div class="space-y-12">
+                <!-- Action Buttons -->
+                <div>
+                    <span class="ds-label mb-6">Interactive Buttons</span>
+                    <div class="flex flex-wrap gap-8 items-center bg-white p-10 rounded-3xl border border-[#D7B8FF]/60 shadow-[0_5px_20px_rgba(75,0,125,0.03)]">
+                        
+                        <div class="flex flex-col gap-3 items-center">
+                            <span class="text-xs text-[#A459D1] font-bold">Primary Action</span>
+                            <div class="flex gap-4 items-center">
+                                <a class="bg-gradient-to-r from-[#4B007D] to-[#A459D1] text-white text-lg font-bold px-8 py-3.5 rounded-full inline-flex items-center justify-center shadow-[0_5px_15px_rgba(75,0,125,0.3)] hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(164,89,209,0.4)] transition-all" href="javascript:void(0);">
+                                    Get Started
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-3 items-center">
+                            <span class="text-xs text-[#A459D1] font-bold">Secondary Action</span>
+                            <div class="flex gap-4 items-center">
+                                <a class="bg-[#F8F6FC] border-2 border-[#D7B8FF] hover:border-[#A459D1] hover:bg-white text-[#4B007D] text-lg font-bold px-8 py-3.5 rounded-full inline-flex items-center gap-3 justify-center transition-all" href="javascript:void(0);">
+                                    Read More <iconify-icon class="text-xl" icon="solar:arrow-right-linear"></iconify-icon>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-3 items-center">
+                            <span class="text-xs text-[#A459D1] font-bold">Ghost Button</span>
+                            <div class="flex gap-4 items-center">
+                                <a class="bg-transparent hover:bg-[#EDE2FF] text-[#A459D1] hover:text-[#4B007D] text-lg font-bold px-6 py-3.5 rounded-full inline-flex items-center transition-all gap-2" href="javascript:void(0);">
+                                    Support <iconify-icon class="text-xl" icon="solar:question-circle-linear"></iconify-icon>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Chips / Badges -->
+                <div>
+                    <span class="ds-label mb-6">Badges & Tags</span>
+                    <div class="flex flex-wrap gap-8 items-center bg-white p-10 rounded-3xl border border-[#D7B8FF]/60 shadow-[0_5px_20px_rgba(75,0,125,0.03)]">
+                        
+                        <span class="inline-flex border border-[#A459D1]/30 bg-[#EDE2FF] text-[#4B007D] font-bold px-4 py-1.5 rounded-full text-xs tracking-widest uppercase items-center gap-2">
+                            <div class="w-2 h-2 bg-[#A459D1] rounded-full animate-pulse"></div>
+                            System Online
+                        </span>
+
+                        <span class="inline-flex border border-transparent bg-[#4B007D] text-white font-bold px-4 py-1.5 rounded-full text-xs tracking-widest uppercase items-center shadow-md">
+                            Premium Label
+                        </span>
+
+                        <div class="bg-[#D7B8FF]/30 text-[#4B007D] font-medium text-xs p-3 rounded-xl rounded-tr-none border border-[#D7B8FF] inline-block shadow-sm">
+                            Hello! This is a chat element.
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Interactive Card Example -->
+                <div>
+                    <span class="ds-label mb-6">Complex Data Cards</span>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        
+                        <!-- Progress Card -->
+                        <div class="w-full bg-white p-8 rounded-3xl border border-[#D7B8FF]/80 shadow-[0_15px_30px_rgba(75,0,125,0.05)] hover:shadow-[0_20px_40px_rgba(164,89,209,0.1)] transition-shadow">
+                            <div class="flex justify-between items-center mb-6">
+                                <h4 class="font-['Bebas_Neue'] text-3xl tracking-tight text-[#4B007D]">Goal Progress</h4>
+                                <div class="w-10 h-10 rounded-full bg-[#EDE2FF] text-[#A459D1] flex items-center justify-center border border-[#D7B8FF]">
+                                    <iconify-icon class="text-xl" icon="solar:cup-star-bold-duotone"></iconify-icon>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-5">
+                                <div>
+                                    <div class="flex justify-between text-sm font-bold text-[#4B007D] mb-2">
+                                        <span>Design System</span>
+                                        <span>85%</span>
+                                    </div>
+                                    <div class="w-full bg-[#EDE2FF] rounded-full h-3 border border-[#D7B8FF]/40 overflow-hidden">
+                                        <div class="bg-gradient-to-r from-[#4B007D] to-[#A459D1] h-3 rounded-full w-[85%]"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-sm font-bold text-[#4B007D] mb-2">
+                                        <span>Illustration Pack</span>
+                                        <span>30%</span>
+                                    </div>
+                                    <div class="w-full bg-[#EDE2FF] rounded-full h-3 border border-[#D7B8FF]/40 overflow-hidden">
+                                        <div class="bg-gradient-to-r from-[#D7B8FF] to-[#A459D1] h-3 rounded-full w-[30%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4) Motion & Icons -->
+        <section id="motion" class="ds-section">
+            <h2 class="ds-section-title">4. Motion & Iconography</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                 
+                <!-- Hover Elevation -->
+                <div>
+                     <span class="ds-label mb-4">Soft Float Component</span>
+                     <div class="bg-white p-10 rounded-3xl border border-[#D7B8FF]/60 hover:border-[#A459D1] hover:shadow-[0_20px_50px_rgba(164,89,209,0.15)] hover:-translate-y-3 transition-all duration-500 cursor-pointer flex flex-col justify-center items-center text-center group">
+                          <iconify-icon class="text-5xl text-[#A459D1] mb-4 drop-shadow-[0_0_10px_rgba(164,89,209,0.3)] group-hover:drop-shadow-[0_0_15px_rgba(164,89,209,0.5)] transition-all" icon="solar:rocket-linear"></iconify-icon>
+                          <h4 class="font-['Barlow_Condensed'] font-bold text-3xl text-[#4B007D] tracking-tight mb-2">Hover Upwards</h4>
+                          <p class="text-[#4A4A4A] text-sm font-medium">Brings elements closer to the user physically and visually via box-shadow and y-translate.</p>
+                     </div>
+                </div>
+
+                <!-- Reveal Motion -->
+                <div>
+                     <span class="ds-label mb-4">Gradient Text Reveal</span>
+                     <div class="bg-gradient-to-br from-[#F8F6FC] to-white p-10 rounded-3xl border border-[#D7B8FF] hover:shadow-[0_15px_30px_rgba(75,0,125,0.1)] hover:-translate-y-2 transition-all duration-500 cursor-pointer group flex flex-col justify-center items-center text-center">
+                          <span class="font-['Bebas_Neue'] text-7xl tracking-tight text-[#4B007D] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#4B007D] group-hover:via-[#A459D1] group-hover:to-[#D7B8FF] transition-all duration-500 leading-none">INTERACT</span>
+                          <p class="text-[#4A4A4A] text-sm font-medium mt-4">CSS background-clip reveals a vivid gradient upon parent group hover.</p>
+                     </div>
+                </div>
+
+            </div>
+
+             <span class="ds-label mb-6">Icon Set Selection</span>
+             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <!-- Icon blocks -->
+                <div class="bg-white border border-[#D7B8FF]/60 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 text-center group hover:border-[#A459D1] hover:shadow-md transition-all">
+                    <iconify-icon class="text-4xl text-[#A459D1]/70 group-hover:text-[#A459D1] transition-colors" icon="solar:heart-angle-bold-duotone"></iconify-icon>
+                </div>
+                <div class="bg-white border border-[#D7B8FF]/60 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 text-center group hover:border-[#A459D1] hover:shadow-md transition-all">
+                    <iconify-icon class="text-4xl text-[#A459D1]/70 group-hover:text-[#A459D1] transition-colors" icon="solar:crown-bold-duotone"></iconify-icon>
+                </div>
+                <div class="bg-white border border-[#D7B8FF]/60 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 text-center group hover:border-[#A459D1] hover:shadow-md transition-all">
+                    <iconify-icon class="text-4xl text-[#A459D1]/70 group-hover:text-[#A459D1] transition-colors" icon="solar:cup-star-bold-duotone"></iconify-icon>
+                </div>
+                <div class="bg-white border border-[#D7B8FF]/60 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 text-center group hover:border-[#A459D1] hover:shadow-md transition-all">
+                    <iconify-icon class="text-4xl text-[#A459D1]/70 group-hover:text-[#A459D1] transition-colors" icon="solar:star-fall-minimalistic-2-bold-duotone"></iconify-icon>
+                </div>
+                <div class="bg-white border border-[#D7B8FF]/60 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 text-center group hover:border-[#A459D1] hover:shadow-md transition-all">
+                    <iconify-icon class="text-4xl text-[#A459D1]/70 group-hover:text-[#A459D1] transition-colors" icon="solar:palette-bold-duotone"></iconify-icon>
+                </div>
+                <div class="bg-white border border-[#D7B8FF]/60 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 text-center group hover:border-[#A459D1] hover:shadow-md transition-all">
+                    <iconify-icon class="text-4xl text-[#A459D1]/70 group-hover:text-[#A459D1] transition-colors" icon="solar:chat-round-dots-bold-duotone"></iconify-icon>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+    
+    <footer class="bg-[#EDE2FF] border-t border-[#D7B8FF]/60 py-12 relative z-20 text-center text-[#A459D1] font-bold text-xs uppercase tracking-widest">
+        Design System V3 · Created With Expertise
+    </footer>
+
+</body>
+</html>
